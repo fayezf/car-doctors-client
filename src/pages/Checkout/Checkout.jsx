@@ -4,6 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Checkout = () => {
     const service = useLoaderData();
+    console.log(service)
     const { title, _id, price, img } = service;
     const {user} = useContext(AuthContext);
 
@@ -26,7 +27,7 @@ const Checkout = () => {
         }
         console.log(booking)
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://cars-doctor-server-gilt.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
